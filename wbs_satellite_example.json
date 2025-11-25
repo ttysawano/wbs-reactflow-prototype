@@ -1,0 +1,582 @@
+{
+  "schema_id": "jp.kanazawa.astro.wbs",
+  "schema_version": 1,
+  "nodes": [
+    {
+      "id": "n0",
+      "wbs_code": "0",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "SATELLITE",
+        "name": "Satellite Project"
+      }
+    },
+    {
+      "id": "n1",
+      "wbs_code": "1",
+      "type": "TASK",
+      "data": {
+        "title": "Mission Definition",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n1_1",
+      "wbs_code": "1.1",
+      "type": "DOCUMENT",
+      "data": {
+        "doc_kind": "MissionDef",
+        "title": "Mission Definition Document",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "id": "n2",
+      "wbs_code": "2",
+      "type": "TASK",
+      "data": {
+        "title": "System Requirements Definition",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n2_1",
+      "wbs_code": "2.1",
+      "type": "DOCUMENT",
+      "data": {
+        "doc_kind": "SysReq",
+        "title": "System Requirements Document",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "id": "n3",
+      "wbs_code": "3",
+      "type": "TASK",
+      "data": {
+        "title": "System Architecture and Function Allocation",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n3_1",
+      "wbs_code": "3.1",
+      "type": "DOCUMENT",
+      "data": {
+        "doc_kind": "AllocDoc",
+        "title": "System Configuration and Function Allocation Document",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "id": "n3_2",
+      "wbs_code": "3.2",
+      "type": "DOCUMENT",
+      "data": {
+        "doc_kind": "ICD",
+        "title": "Interface Control Documents (ICD set)",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "id": "n4",
+      "wbs_code": "4",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "SATELLITE",
+        "name": "Satellite System (Product Tree)"
+      }
+    },
+    {
+      "id": "n4_1",
+      "wbs_code": "4.1",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "BUS",
+        "name": "Bus System"
+      }
+    },
+    {
+      "id": "n4_1_1",
+      "wbs_code": "4.1.1",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "SUBSYSTEM",
+        "name": "Attitude Determination and Control Subsystem (ADCS)"
+      }
+    },
+    {
+      "id": "n4_1_2",
+      "wbs_code": "4.1.2",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "SUBSYSTEM",
+        "name": "Communications Subsystem (COM)"
+      }
+    },
+    {
+      "id": "n4_1_3",
+      "wbs_code": "4.1.3",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "SUBSYSTEM",
+        "name": "Electrical Power Subsystem (EPS)"
+      }
+    },
+    {
+      "id": "n4_1_4",
+      "wbs_code": "4.1.4",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "SUBSYSTEM",
+        "name": "Thermal Control Subsystem (TCS)"
+      }
+    },
+    {
+      "id": "n4_1_5",
+      "wbs_code": "4.1.5",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "SUBSYSTEM",
+        "name": "Structures Subsystem (STR)"
+      }
+    },
+    {
+      "id": "n4_1_6",
+      "wbs_code": "4.1.6",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "SUBSYSTEM",
+        "name": "Deployment Subsystem (DEP)"
+      }
+    },
+    {
+      "id": "n4_2",
+      "wbs_code": "4.2",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "MISSION",
+        "name": "Mission Payload System"
+      }
+    },
+    {
+      "id": "n4_2_1",
+      "wbs_code": "4.2.1",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "PAYLOAD",
+        "name": "Instrument 1"
+      }
+    },
+    {
+      "id": "n4_2_2",
+      "wbs_code": "4.2.2",
+      "type": "PRODUCT",
+      "data": {
+        "product_kind": "PAYLOAD",
+        "name": "Instrument 2"
+      }
+    },
+    {
+      "id": "n5",
+      "wbs_code": "5",
+      "type": "TASK",
+      "data": {
+        "title": "Subsystem Development and Testing",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n5_1",
+      "wbs_code": "5.1",
+      "type": "TASK",
+      "data": {
+        "title": "Bus Subsystems Development",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n5_1_1",
+      "wbs_code": "5.1.1",
+      "type": "TASK",
+      "data": {
+        "title": "ADCS Design",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n5_1_2",
+      "wbs_code": "5.1.2",
+      "type": "TASK",
+      "data": {
+        "title": "ADCS Prototype and Evaluation",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n5_1_3",
+      "wbs_code": "5.1.3",
+      "type": "TASK",
+      "data": {
+        "title": "ADCS Environmental Tests",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n5_2",
+      "wbs_code": "5.2",
+      "type": "TASK",
+      "data": {
+        "title": "Mission Subsystems Development",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n5_2_1",
+      "wbs_code": "5.2.1",
+      "type": "TASK",
+      "data": {
+        "title": "Instrument 1 Design",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n5_2_2",
+      "wbs_code": "5.2.2",
+      "type": "TASK",
+      "data": {
+        "title": "Instrument 1 Prototype and Evaluation",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n6",
+      "wbs_code": "6",
+      "type": "TASK",
+      "data": {
+        "title": "Integration, Testing, and Operations Preparation",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n6_1",
+      "wbs_code": "6.1",
+      "type": "TASK",
+      "data": {
+        "title": "Satellite System Integration Tests",
+        "status": "NEW"
+      }
+    },
+    {
+      "id": "n6_2",
+      "wbs_code": "6.2",
+      "type": "TASK",
+      "data": {
+        "title": "Ground Station and Operations Procedures Preparation",
+        "status": "NEW"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_h_0_1",
+      "type": "HIERARCHY",
+      "source": "n0",
+      "target": "n1"
+    },
+    {
+      "id": "e_h_0_2",
+      "type": "HIERARCHY",
+      "source": "n0",
+      "target": "n2"
+    },
+    {
+      "id": "e_h_0_3",
+      "type": "HIERARCHY",
+      "source": "n0",
+      "target": "n3"
+    },
+    {
+      "id": "e_h_0_4",
+      "type": "HIERARCHY",
+      "source": "n0",
+      "target": "n4"
+    },
+    {
+      "id": "e_h_0_5",
+      "type": "HIERARCHY",
+      "source": "n0",
+      "target": "n5"
+    },
+    {
+      "id": "e_h_0_6",
+      "type": "HIERARCHY",
+      "source": "n0",
+      "target": "n6"
+    },
+    {
+      "id": "e_h_1_1",
+      "type": "HIERARCHY",
+      "source": "n1",
+      "target": "n1_1"
+    },
+    {
+      "id": "e_h_2_1",
+      "type": "HIERARCHY",
+      "source": "n2",
+      "target": "n2_1"
+    },
+    {
+      "id": "e_h_3_1",
+      "type": "HIERARCHY",
+      "source": "n3",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_h_3_2",
+      "type": "HIERARCHY",
+      "source": "n3",
+      "target": "n3_2"
+    },
+    {
+      "id": "e_h_4_1",
+      "type": "HIERARCHY",
+      "source": "n4",
+      "target": "n4_1"
+    },
+    {
+      "id": "e_h_4_2",
+      "type": "HIERARCHY",
+      "source": "n4",
+      "target": "n4_2"
+    },
+    {
+      "id": "e_h_4_1_1",
+      "type": "HIERARCHY",
+      "source": "n4_1",
+      "target": "n4_1_1"
+    },
+    {
+      "id": "e_h_4_1_2",
+      "type": "HIERARCHY",
+      "source": "n4_1",
+      "target": "n4_1_2"
+    },
+    {
+      "id": "e_h_4_1_3",
+      "type": "HIERARCHY",
+      "source": "n4_1",
+      "target": "n4_1_3"
+    },
+    {
+      "id": "e_h_4_1_4",
+      "type": "HIERARCHY",
+      "source": "n4_1",
+      "target": "n4_1_4"
+    },
+    {
+      "id": "e_h_4_1_5",
+      "type": "HIERARCHY",
+      "source": "n4_1",
+      "target": "n4_1_5"
+    },
+    {
+      "id": "e_h_4_1_6",
+      "type": "HIERARCHY",
+      "source": "n4_1",
+      "target": "n4_1_6"
+    },
+    {
+      "id": "e_h_4_2_1",
+      "type": "HIERARCHY",
+      "source": "n4_2",
+      "target": "n4_2_1"
+    },
+    {
+      "id": "e_h_4_2_2",
+      "type": "HIERARCHY",
+      "source": "n4_2",
+      "target": "n4_2_2"
+    },
+    {
+      "id": "e_h_5_1",
+      "type": "HIERARCHY",
+      "source": "n5",
+      "target": "n5_1"
+    },
+    {
+      "id": "e_h_5_2",
+      "type": "HIERARCHY",
+      "source": "n5",
+      "target": "n5_2"
+    },
+    {
+      "id": "e_h_5_1_1",
+      "type": "HIERARCHY",
+      "source": "n5_1",
+      "target": "n5_1_1"
+    },
+    {
+      "id": "e_h_5_1_2",
+      "type": "HIERARCHY",
+      "source": "n5_1",
+      "target": "n5_1_2"
+    },
+    {
+      "id": "e_h_5_1_3",
+      "type": "HIERARCHY",
+      "source": "n5_1",
+      "target": "n5_1_3"
+    },
+    {
+      "id": "e_h_5_2_1",
+      "type": "HIERARCHY",
+      "source": "n5_2",
+      "target": "n5_2_1"
+    },
+    {
+      "id": "e_h_5_2_2",
+      "type": "HIERARCHY",
+      "source": "n5_2",
+      "target": "n5_2_2"
+    },
+    {
+      "id": "e_h_6_1",
+      "type": "HIERARCHY",
+      "source": "n6",
+      "target": "n6_1"
+    },
+    {
+      "id": "e_h_6_2",
+      "type": "HIERARCHY",
+      "source": "n6",
+      "target": "n6_2"
+    },
+    {
+      "id": "e_d_2_1_dep_1_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n2_1",
+      "target": "n1_1"
+    },
+    {
+      "id": "e_d_3_1_dep_2_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n3_1",
+      "target": "n2_1"
+    },
+    {
+      "id": "e_d_3_2_dep_2_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n3_2",
+      "target": "n2_1"
+    },
+    {
+      "id": "e_d_4_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_1_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_1",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_2_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_2",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_1_1_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_1_1",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_1_2_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_1_2",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_1_3_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_1_3",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_1_4_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_1_4",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_1_5_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_1_5",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_1_6_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_1_6",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_2_1_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_2_1",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_4_2_2_dep_3_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n4_2_2",
+      "target": "n3_1"
+    },
+    {
+      "id": "e_d_5_1_1_dep_4_1_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n5_1_1",
+      "target": "n4_1_1"
+    },
+    {
+      "id": "e_d_5_1_2_dep_4_1_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n5_1_2",
+      "target": "n4_1_1"
+    },
+    {
+      "id": "e_d_5_1_3_dep_4_1_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n5_1_3",
+      "target": "n4_1_1"
+    },
+    {
+      "id": "e_d_5_2_1_dep_4_2_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n5_2_1",
+      "target": "n4_2_1"
+    },
+    {
+      "id": "e_d_5_2_2_dep_4_2_1",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n5_2_2",
+      "target": "n4_2_1"
+    },
+    {
+      "id": "e_d_6_1_dep_4",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n6_1",
+      "target": "n4"
+    },
+    {
+      "id": "e_d_6_2_dep_4",
+      "type": "DOC_DEPENDS_ON",
+      "source": "n6_2",
+      "target": "n4"
+    }
+  ]
+}

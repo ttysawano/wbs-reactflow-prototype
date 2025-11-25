@@ -8,7 +8,7 @@ import ReactFlow, {
 import type { Node, Edge } from "reactflow";
 import "reactflow/dist/style.css";
 
-import wbs from "./wbs_sample_min.json";
+import wbs from "./wbs_satellite_example.json";
 
 // ノード型（必要に応じて拡張していく）
 type WbsNode = Node & {
