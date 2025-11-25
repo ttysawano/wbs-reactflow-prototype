@@ -1,0 +1,76 @@
+{
+  "schema_id": "jp.kanazawa.astro.wbs",
+  "schema_version": 1,
+  "nodes": [
+    {
+      "id": "42",
+      "wbs_code": "010000",
+      "type": "DOCUMENT",
+      "position": { "x": 0, "y": 0 },
+      "data": {
+        "doc_kind": "MissionDef",
+        "title": "Mission Definition Document",
+        "repo": "gitlab:space/koyoh-docs",
+        "path": "docs/mission_def.md",
+        "version": "v1.2",
+        "vcs_ref": "tag:MDOC_v1.2",
+        "status": "APPROVED"
+      }
+    },
+    {
+      "id": "101",
+      "wbs_code": "020000",
+      "type": "DOCUMENT",
+      "position": { "x": 300, "y": 0 },
+      "data": {
+        "doc_kind": "SysReq",
+        "title": "System Requirements Document",
+        "repo": "gitlab:space/koyoh-docs",
+        "path": "docs/sys_req.md",
+        "version": "v1.0",
+        "vcs_ref": "tag:SYSREQ_v1.0",
+        "status": "REVIEW"
+      }
+    },
+    {
+      "id": "200",
+      "wbs_code": "110000",
+      "type": "PRODUCT",
+      "position": { "x": 150, "y": 200 },
+      "data": {
+        "product_kind": "BUS",
+        "name": "Bus System",
+        "baseline_id": "BUS_BL1",
+        "config_doc_node": "101"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "type": "HIERARCHY",
+      "source": "42",
+      "target": "101"
+    },
+    {
+      "id": "e2",
+      "type": "DOC_DEPENDS_ON",
+      "source": "101",
+      "target": "42",
+      "data": {
+        "based_on_version": "v1.2",
+        "approved": true
+      }
+    },
+    {
+      "id": "e3",
+      "type": "DOC_DEPENDS_ON",
+      "source": "200",
+      "target": "101",
+      "data": {
+        "based_on_version": "v1.0",
+        "approved": false
+      }
+    }
+  ]
+}
