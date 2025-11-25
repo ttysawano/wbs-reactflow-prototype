@@ -1,40 +1,54 @@
 {
-  "schema_id": "jp.ku.astro.wbs",
+  "schema_id": "jp.kanazawa.astro.wbs",
   "schema_version": 1,
 
   "node_types": [
     {
       "id": "DOCUMENT",
       "label": "Document",
-      "description": "仕様書や定義書など",
+      "description": "仕様書や定義書などの文書",
       "fields": [
-        { "name": "doc_kind", "type": "enum", "required": true,
-          "enum": ["MissionDef", "SysReq", "AllocDoc", "ICD", "TestPlan"] },
+        {
+          "name": "doc_kind",
+          "type": "enum",
+          "required": true,
+          "enum": ["MissionDef", "SysReq", "AllocDoc", "ICD", "TestPlan"]
+        },
         { "name": "title", "type": "string", "required": true },
-        { "name": "repo", "type": "string", "required": false },   // gitlab:..., svn:...
+        { "name": "repo", "type": "string", "required": false },
         { "name": "path", "type": "string", "required": false },
         { "name": "version", "type": "string", "required": false },
         { "name": "vcs_ref", "type": "string", "required": false },
-        { "name": "status", "type": "enum", "required": true,
+        {
+          "name": "status",
+          "type": "enum",
+          "required": true,
           "enum": ["DRAFT", "REVIEW", "APPROVED", "OBSOLETE"],
           "default": "DRAFT"
         }
       ]
     },
-
     {
       "id": "PRODUCT",
       "label": "Product",
       "description": "衛星・サブシステム・機器などの構成要素",
       "fields": [
-        { "name": "product_kind", "type": "enum", "required": true,
-          "enum": ["SATELLITE", "BUS", "MISSION", "SUBSYSTEM", "PAYLOAD"] },
+        {
+          "name": "product_kind",
+          "type": "enum",
+          "required": true,
+          "enum": ["SATELLITE", "BUS", "MISSION", "SUBSYSTEM", "PAYLOAD"]
+        },
         { "name": "name", "type": "string", "required": true },
         { "name": "baseline_id", "type": "string", "required": false },
-        { "name": "config_doc_node", "type": "ref", "ref_type": "DOCUMENT", "required": false }
+        {
+          "name": "config_doc_node",
+          "type": "ref",
+          "ref_type": "DOCUMENT",
+          "required": false
+        }
       ]
     },
-
     {
       "id": "TASK",
       "label": "Task",
@@ -42,12 +56,19 @@
       "fields": [
         { "name": "title", "type": "string", "required": true },
         { "name": "owner", "type": "string", "required": false },
-        { "name": "status", "type": "enum", "required": true,
+        {
+          "name": "status",
+          "type": "enum",
+          "required": true,
           "enum": ["NEW", "IN_PROGRESS", "DONE", "BLOCKED"],
           "default": "NEW"
         },
         { "name": "redmine_issue_id", "type": "int", "required": false },
-        { "name": "targets_product_baseline", "type": "string", "required": false }
+        {
+          "name": "targets_product_baseline",
+          "type": "string",
+          "required": false
+        }
       ]
     }
   ],
@@ -56,7 +77,7 @@
     {
       "id": "HIERARCHY",
       "label": "Hierarchy",
-      "kind": "tree",            // 木構造前提
+      "kind": "tree",
       "allowed_sources": ["DOCUMENT", "PRODUCT", "TASK"],
       "allowed_targets": ["DOCUMENT", "PRODUCT", "TASK"]
     },
