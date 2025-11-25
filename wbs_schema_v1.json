@@ -1,0 +1,78 @@
+{
+  "schema_id": "jp.ku.astro.wbs",
+  "schema_version": 1,
+
+  "node_types": [
+    {
+      "id": "DOCUMENT",
+      "label": "Document",
+      "description": "仕様書や定義書など",
+      "fields": [
+        { "name": "doc_kind", "type": "enum", "required": true,
+          "enum": ["MissionDef", "SysReq", "AllocDoc", "ICD", "TestPlan"] },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "repo", "type": "string", "required": false },   // gitlab:..., svn:...
+        { "name": "path", "type": "string", "required": false },
+        { "name": "version", "type": "string", "required": false },
+        { "name": "vcs_ref", "type": "string", "required": false },
+        { "name": "status", "type": "enum", "required": true,
+          "enum": ["DRAFT", "REVIEW", "APPROVED", "OBSOLETE"],
+          "default": "DRAFT"
+        }
+      ]
+    },
+
+    {
+      "id": "PRODUCT",
+      "label": "Product",
+      "description": "衛星・サブシステム・機器などの構成要素",
+      "fields": [
+        { "name": "product_kind", "type": "enum", "required": true,
+          "enum": ["SATELLITE", "BUS", "MISSION", "SUBSYSTEM", "PAYLOAD"] },
+        { "name": "name", "type": "string", "required": true },
+        { "name": "baseline_id", "type": "string", "required": false },
+        { "name": "config_doc_node", "type": "ref", "ref_type": "DOCUMENT", "required": false }
+      ]
+    },
+
+    {
+      "id": "TASK",
+      "label": "Task",
+      "description": "設計・試験などの作業項目",
+      "fields": [
+        { "name": "title", "type": "string", "required": true },
+        { "name": "owner", "type": "string", "required": false },
+        { "name": "status", "type": "enum", "required": true,
+          "enum": ["NEW", "IN_PROGRESS", "DONE", "BLOCKED"],
+          "default": "NEW"
+        },
+        { "name": "redmine_issue_id", "type": "int", "required": false },
+        { "name": "targets_product_baseline", "type": "string", "required": false }
+      ]
+    }
+  ],
+
+  "edge_types": [
+    {
+      "id": "HIERARCHY",
+      "label": "Hierarchy",
+      "kind": "tree",            // 木構造前提
+      "allowed_sources": ["DOCUMENT", "PRODUCT", "TASK"],
+      "allowed_targets": ["DOCUMENT", "PRODUCT", "TASK"]
+    },
+    {
+      "id": "DOC_DEPENDS_ON",
+      "label": "Doc dependency",
+      "kind": "dependency",
+      "allowed_sources": ["DOCUMENT", "PRODUCT", "TASK"],
+      "allowed_targets": ["DOCUMENT"]
+    },
+    {
+      "id": "TASK_DEPENDS_ON",
+      "label": "Task dependency",
+      "kind": "dependency",
+      "allowed_sources": ["TASK"],
+      "allowed_targets": ["TASK"]
+    }
+  ]
+}
